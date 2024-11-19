@@ -1,0 +1,58 @@
+<!-- app/templates/admin/results.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Results</title>
+    <link rel="stylesheet" href="{{ url_for('static.css.styles') }}">
+</head>
+<body>
+    <header>
+        <h1>View Results</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('admin.users') }}">Manage Users</a></li>
+                <li><a href="{{ url_for('admin.settings') }}">Settings</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>All Results</h2>
+        <form method="GET" action="{{ url_for('admin.filter_results') }}">
+            <label for="student_id">Filter by Student:</label>
+            <select name="student_id" id="student_id">
+                <option value="">--Select Student--</option>
+                {% for student in students %}
+                <option value="{{ student.id }}">{{ student.username }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit">Filter</button>
+        </form>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Student</th>
+                    <th>Subject</th>
+                    <th>Grade</th>
+                    <th>Year</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for result in results %}
+                <tr>
+                    <td>{{ result.student.username }}</td>
+                    <td>{{ result.subject }}</td>
+                    <td>{{ result.grade }}</td>
+                    <td>{{ result.year }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+</body>
+</html>

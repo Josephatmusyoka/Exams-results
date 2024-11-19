@@ -1,0 +1,36 @@
+<!-- app/templates/admin/settings.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="{{ url_for('static.css.styles') }}">
+</head>
+<body>
+    <header>
+        <h1>System Settings</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('admin.dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('admin.users') }}">Manage Users</a></li>
+                <li><a href="{{ url_for('admin.results') }}">View Results</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Application Settings</h2>
+        <form method="POST" action="{{ url_for('admin.update_settings') }}">
+            <label for="app_name">Application Name:</label>
+            <input type="text" name="app_name" id="app_name" value="{{ config.app_name }}" required>
+
+            <label for="maintenance_mode">Maintenance Mode:</label>
+            <input type="checkbox" name="maintenance_mode" id="maintenance_mode" {% if config.maintenance_mode %}checked{% endif %}>
+
+            <button type="submit">Save Settings</button>
+        </form>
+    </section>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!-- app/templates/admin/dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static.css.styles') }}">
+</head>
+<body>
+    <header>
+        <h1>Admin Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('admin.users') }}">Manage Users</a></li>
+                <li><a href="{{ url_for('admin.results') }}">View Results</a></li>
+                <li><a href="{{ url_for('admin.settings') }}">Settings</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Overview</h2>
+        <p>Welcome to the Admin Dashboard. Here you can manage users, view academic results, and configure the system settings.</p>
+        <div>
+            <ul>
+                <li><a href="{{ url_for('admin.users') }}">View Users</a></li>
+                <li><a href="{{ url_for('admin.results') }}">View Results</a></li>
+                <li><a href="{{ url_for('admin.settings') }}">System Settings</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

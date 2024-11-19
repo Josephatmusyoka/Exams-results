@@ -1,0 +1,33 @@
+<!-- app/templates/student/dashboard.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static.css.styles') }}">
+</head>
+<body>
+    <header>
+        <h1>Welcome, {{ student.username }}!</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('student.profile') }}">Profile</a></li>
+                <li><a href="{{ url_for('student.results') }}">Results</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Your Dashboard</h2>
+        <div>
+            <p>Here you can view your profile, results, and manage your account.</p>
+            <ul>
+                <li><a href="{{ url_for('student.profile') }}">View Profile</a></li>
+                <li><a href="{{ url_for('student.results') }}">View Results</a></li>
+            </ul>
+        </div>
+    </section>
+</body>
+</html>

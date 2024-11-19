@@ -1,0 +1,171 @@
+/* app/static/css/styles.css */
+
+/* Reset some basic styling for consistency across browsers */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+header {
+    background-color: #004d40;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin-bottom: 10px;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #00bfae;
+}
+
+section {
+    padding: 20px;
+}
+
+/* General layout for tables */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+table th {
+    background-color: #004d40;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e0f7fa;
+}
+
+/* Forms */
+form {
+    margin-bottom: 20px;
+}
+
+form input, form select, form button {
+    padding: 10px;
+    margin: 5px;
+    width: 200px;
+}
+
+form button {
+    background-color: #004d40;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #00bfae;
+}
+
+/* Button links in tables */
+a {
+    color: #004d40;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #00bfae;
+}
+
+/* Styles specific to Admin Section */
+.admin-dashboard {
+    display: flex;
+    justify-content: space-between;
+}
+
+.admin-dashboard h2 {
+    font-size: 1.5em;
+}
+
+.admin-dashboard .overview {
+    width: 100%;
+    text-align: center;
+}
+
+/* Admin-specific tables */
+.admin-dashboard .table-container {
+    margin-top: 20px;
+}
+
+.admin-dashboard .table-container table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* User Management */
+.user-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-actions a {
+    padding: 5px 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #004d40;
+    color: white;
+}
+
+.user-actions a:hover {
+    background-color: #00bfae;
+}
+
+/* Results Page */
+.results-filter {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.results-filter select {
+    padding: 10px;
+    font-size: 1em;
+}
+
+/* Settings Page */
+.settings-form input, .settings-form button {
+    width: auto;
+}
+
+.settings-form label {
+    margin-right: 10px;
+}

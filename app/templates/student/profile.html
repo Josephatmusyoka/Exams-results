@@ -1,0 +1,39 @@
+<!-- app/templates/student/profile.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="{{ url_for('static.css.styles') }}">
+</head>
+<body>
+    <header>
+        <h1>Profile: {{ student.username }}</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('student.dashboard') }}">Dashboard</a></li>
+                <li><a href="{{ url_for('student.results') }}">Results</a></li>
+                <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h2>Personal Information</h2>
+        <p><strong>Student ID:</strong> {{ student.student_id }}</p>
+        <p><strong>Email:</strong> {{ student.email }}</p>
+
+        <h3>Edit Profile</h3>
+        <form method="POST" action="{{ url_for('student.update_profile') }}">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" value="{{ student.email }}" required>
+
+            <label for="username">Username:</label>
+            <input type="text" name="username" id="username" value="{{ student.username }}" required>
+
+            <button type="submit">Update Profile</button>
+        </form>
+    </section>
+</body>
+</html>
